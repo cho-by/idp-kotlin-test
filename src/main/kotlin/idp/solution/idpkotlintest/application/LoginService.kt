@@ -27,15 +27,16 @@ class LoginService (
     override fun login(httpSession: HttpSession, loginRequestDTO: LoginRequestDTO): LogInUseCase.Result {
         val loginEntity: LoginEntity = loginJPA.findById(loginRequestDTO.email).orElse(LoginEntity(email = ""))
 
-        if (loginEntity.email != "") {
-            httpSession.setAttribute(LoginEnum.LOGIN_INFO.code(), LoginVO(email=loginEntity.email))
+        val email: String = loginEntity.email
+        val success: Boolean = email != ""
 
-            return LogInUseCase.Result(email = loginEntity.email, success = true)
+        if (success) {
+            httpSession.setAttribute(LoginEnum.LOGIN_INFO.code(), LoginVO(email = email))
+        } else {
+            httpSession.invalidate()
         }
 
-        httpSession.invalidate()
-
-        return LogInUseCase.Result(email = "", success = false)
+        return LogInUseCase.Result(email = email, success = success)
     }
 
     override fun logout(httpSession: HttpSession): LogOutUseCase.Result {
