@@ -2,7 +2,6 @@ package idp.solution.idpkotlintest.application
 
 import idp.solution.idpkotlintest.adapter.`in`.web.dto.LoginRequestDTO
 import idp.solution.idpkotlintest.adapter.out.persistence.entity.LoginEntity
-import idp.solution.idpkotlintest.adapter.out.persistence.repository.LoginJPA
 import idp.solution.idpkotlintest.adapter.out.persistence.repository.LoginQuerydsl
 import idp.solution.idpkotlintest.application.port.`in`.LogInUseCase
 import idp.solution.idpkotlintest.application.port.`in`.LogOutUseCase
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class LoginService (
-    private val loginJPA: LoginJPA,
+//    private val loginJPA: LoginJPA,
     private val loginQuerydsl: LoginQuerydsl,
 ):LoginCheckUseCase, LogInUseCase, LogOutUseCase {
 
