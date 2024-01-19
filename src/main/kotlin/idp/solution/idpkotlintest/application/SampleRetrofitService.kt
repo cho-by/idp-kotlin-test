@@ -1,4 +1,4 @@
-package idp.solution.idpkotlintest.application.port.`in`
+package idp.solution.idpkotlintest.application
 
 import com.google.gson.annotations.SerializedName
 import retrofit2.Call

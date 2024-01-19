@@ -1,7 +1,7 @@
 package idp.solution.idpkotlintest.adapter.`in`.web
 
 import idp.solution.idpkotlintest.application.port.`in`.LoginCheckUseCase
-import idp.solution.idpkotlintest.application.port.`in`.SampleRetrofitService
+import idp.solution.idpkotlintest.application.SampleRetrofitService
 import idp.solution.idpkotlintest.util.RetrofitConnection
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
